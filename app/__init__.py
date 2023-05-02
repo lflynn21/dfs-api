@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .database import client
+#from .database import client
 from .main import router as main_router
 
 
