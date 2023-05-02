@@ -7,7 +7,7 @@ def list_books():
     return {'books': ['draftkings', 'fanduel', 'betrivers', 'pinnacle', 'pointsbet']}
 
 @router.get("/{book}")
-def get_book_props(book):
+async def get_book_props(book):
     return {
         'book': book,
         'props': []
