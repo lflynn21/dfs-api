@@ -7,6 +7,6 @@ app.include_router(sports.router, prefix="/sports")
 app.include_router(books.router, prefix="/books")
 app.include_router(dfs.router, prefix="/dfs")
 
-@app.get("/")
+@app.get("/", tags=['root'])
 def read_root():
     return "DFS Props API"
