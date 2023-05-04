@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from database.database import client
+from database.database import *
 
 router = APIRouter()
 
@@ -9,8 +9,5 @@ def list_dfs_platforms():
 
 @router.get('/{platform}')
 def get_platform_props(platform):
-    dfs_coll = client['props'][platform]
-    props = dfs_coll.find({'dfs_platform': platform})
-    return list(props)
+    return get_active_props(platform)
 
-print(get_platform_props('prizepicks'))
