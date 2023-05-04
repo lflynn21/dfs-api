@@ -1,14 +1,22 @@
 from typing import Dict, Optional
 from pydantic import BaseModel
 
-class OverUnder(BaseModel):
-    over: Optional[int]
-    under: Optional[int]
-
-class PlayerLines(BaseModel):
-    line: float
-    books: Dict[str, OverUnder]
+class BookOdds(BaseModel):
+    odds: int
+    implied_percentage: float
 
 class Player(BaseModel):
+    id: int
     name: str
-    stats: Dict[str, PlayerLines]
+    display_name: str
+    position: str
+    opponent: str
+    line_score: float
+    stat_type: str
+    team: str
+    league: str
+    bet_type: str
+    comp_percent: float
+    dfs_book: str
+    active: bool
+    books: Dict[str, BookOdds]
