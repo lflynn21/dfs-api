@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import sports, books, dfs
+from .routers import sports, books, dfs
 
 app = FastAPI()
 
